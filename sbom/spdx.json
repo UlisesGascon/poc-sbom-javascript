@@ -3,9 +3,9 @@
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
   "name": "poc-sbom-javascript@1.0.0",
-  "documentNamespace": "http://spdx.org/spdxdocs/poc-sbom-javascript-1.0.0-97e81726-d041-462b-8fc0-037424fa4bae",
+  "documentNamespace": "http://spdx.org/spdxdocs/poc-sbom-javascript-1.0.0-7c09b298-8c34-4499-b9fc-3069ee32c2f4",
   "creationInfo": {
-    "created": "2024-01-31T14:40:52.091Z",
+    "created": "2024-01-31T15:23:09.579Z",
     "creators": [
       "Tool: npm/cli-10.2.4"
     ]
@@ -802,6 +802,30 @@
       ]
     },
     {
+      "name": "lodash",
+      "SPDXID": "SPDXRef-Package-lodash-4.17.21",
+      "versionInfo": "4.17.21",
+      "packageFileName": "node_modules/lodash",
+      "description": "Lodash modular utilities.",
+      "downloadLocation": "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://lodash.com/",
+      "licenseDeclared": "MIT",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/lodash@4.17.21"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "bf690311ee7b95e713ba568322e3533f2dd1cb880b189e99d4edef13592b81764daec43e2c54c61d5c558dc5cfb35ecb85b65519e74026ff17675b6f8f916f4a"
+        }
+      ]
+    },
+    {
       "name": "media-typer",
       "SPDXID": "SPDXRef-Package-media-typer-0.3.0",
       "versionInfo": "0.3.0",
@@ -1531,6 +1555,11 @@
     {
       "spdxElementId": "SPDXRef-Package-poc-sbom-javascript-1.0.0",
       "relatedSpdxElement": "SPDXRef-Package-express-4.18.2",
+      "relationshipType": "DEPENDS_ON"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-poc-sbom-javascript-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-lodash-4.17.21",
       "relationshipType": "DEPENDS_ON"
     },
     {
