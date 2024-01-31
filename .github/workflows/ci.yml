@@ -1,0 +1,44 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ '*' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.11.0]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+
+    - name: Check SBOM Changes
+      run: |
+        echo "Calculating current hashes..."
+        find ./sbom -type f -exec sha256sum {} \; > current_hashes.txt
+
+        echo "Generating new SBOM..."
+        npm run generate-sbom
+
+        echo "Calculating new hashes..."
+        find ./sbom -type f -exec sha256sum {} \; > new_hashes.txt
+
+        echo "Comparing hashes..."
+        diff current_hashes.txt new_hashes.txt
+        rm current_hashes.txt new_hashes.txt
+        if [ $? -ne 0 ]; then
+          echo "Error: SBOM hashes do not match, please run 'npm run generate-sbom' locally and commit the changes."
+          exit 1
+        fi
+
+    - run: npm test --if-present
