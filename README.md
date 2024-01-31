@@ -1,4 +1,4 @@
-# poc-sbom-javascript
+# POC - Using SBOM with javascript applications using npm and GitHub Actions
 
 In this Proof of Concept (POC), we'll leverage GitHub Actions and npm to generate and verify the Software Bill of Materials (SBOM) for a straightforward JavaScript application.
 
