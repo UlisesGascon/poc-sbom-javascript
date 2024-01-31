@@ -1,0 +1,12 @@
+{
+  "name": "poc-sbom-javascript",
+  "version": "1.0.0",
+  "description": "Proof of concept project aimed to showcase how to generate SBOM for Javascript projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ulises Gascon",
+  "license": "MIT"
+}
