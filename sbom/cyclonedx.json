@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:b35838f8-3ba3-4e2a-b89d-d97cc9be828e",
+  "serialNumber": "urn:uuid:91c5e7c1-903b-4cd5-bb03-4640898acd84",
   "version": 1,
   "metadata": {
-    "timestamp": "2024-01-31T15:23:06.693Z",
+    "timestamp": "2024-01-31T15:51:17.663Z",
     "lifecycles": [
       {
         "phase": "build"
@@ -1542,53 +1542,6 @@
       ]
     },
     {
-      "bom-ref": "lodash@4.17.21",
-      "type": "library",
-      "name": "lodash",
-      "version": "4.17.21",
-      "scope": "required",
-      "author": "John-David Dalton",
-      "description": "Lodash modular utilities.",
-      "purl": "pkg:npm/lodash@4.17.21",
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/lodash"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
-        },
-        {
-          "type": "vcs",
-          "url": "git+https://github.com/lodash/lodash.git"
-        },
-        {
-          "type": "website",
-          "url": "https://lodash.com/"
-        },
-        {
-          "type": "issue-tracker",
-          "url": "https://github.com/lodash/lodash/issues"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "bf690311ee7b95e713ba568322e3533f2dd1cb880b189e99d4edef13592b81764daec43e2c54c61d5c558dc5cfb35ecb85b65519e74026ff17675b6f8f916f4a"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
       "bom-ref": "media-typer@0.3.0",
       "type": "library",
       "name": "media-typer",
@@ -2991,8 +2944,7 @@
     {
       "ref": "poc-sbom-javascript@1.0.0",
       "dependsOn": [
-        "express@4.18.2",
-        "lodash@4.17.21"
+        "express@4.18.2"
       ]
     },
     {
@@ -3208,10 +3160,6 @@
     },
     {
       "ref": "ipaddr.js@1.9.1",
-      "dependsOn": []
-    },
-    {
-      "ref": "lodash@4.17.21",
       "dependsOn": []
     },
     {
