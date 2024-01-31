@@ -29,7 +29,7 @@ jobs:
         cp -r sbom/* sbom-tmp/
 
         calculate_hashes() {
-          file = $1
+          file=$1
           echo "Removing timestamp and serialNumber from cyclonedx SBOM..."
           jq 'del(.metadata.timestamp)' sbom-tmp/cyclonedx.json > sbom-tmp/cyclonedx.json
           jq 'del(.serialNumber)' sbom-tmp/cyclonedx.json > sbom-tmp/cyclonedx.json
@@ -39,7 +39,7 @@ jobs:
           jq 'del(.documentNamespace)' sbom-tmp/spdx.json > sbom-tmp/spdx.json
   
           echo "generating hashes..."
-          find ./sbom-tmp -type f -exec sha256sum {} \; > file
+          find ./sbom-tmp -type f -exec sha256sum {} \; > $file
         }
 
         echo "Calculating current hashes..."
