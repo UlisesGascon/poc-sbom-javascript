@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-sbom": "npm run generate-sbom:cyclonedx && npm run generate-sbom:spdx",
+    "generate-sbom:cyclonedx": "npm sbom --sbom-type application --sbom-format cyclonedx > sbom/cyclonedx.json",
+    "generate-sbom:spdx": "npm sbom --sbom-type application --sbom-format spdx > sbom/spdx.json"
   },
   "keywords": [],
   "author": "Ulises Gascon",
